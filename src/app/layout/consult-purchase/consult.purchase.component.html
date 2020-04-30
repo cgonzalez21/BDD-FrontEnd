@@ -42,9 +42,9 @@
                     <td>{{purchase.Cedula_cl}}</td>
                     <td>{{purchase.Descripcion_ar}}</td>
                     <td>{{purchase.Cantidad_vd}}</td>
-                    <td>{{purchase.SubTotal_ve}}</td>
-                    <td>{{purchase.Impuesto_ve}}</td>
-                    <td>{{purchase.Total_ve}}</td>
+                    <td>{{purchase.SubTotal_ve | currency}}</td>
+                    <td>{{purchase.Impuesto_ve | currency}}</td>
+                    <td>{{purchase.Total_ve | currency}}</td>
                 </tr>
             </tbody>
         </table>
