@@ -18,7 +18,7 @@ export class BackEndService {
     private dir: string;
 
     constructor(private http: HttpClient, private router: Router) {
-        this.dir = 'http://192.168.149.129:3200/';
+        this.dir = '';
     }
 
     getEmpresa() {
