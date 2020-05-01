@@ -10,15 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ExportAsModule } from 'ngx-export-as';
 
-// AoT requires an exported function for factories
+
 export const createTranslateLoader = (http: HttpClient) => {
-    /* for development
-    return new TranslateHttpLoader(
-        http,
-        '/start-angular/SB-Admin-BS4-Angular-6/master/dist/assets/i18n/',
-        '.json'
-    ); */
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 };
 
@@ -29,6 +24,7 @@ export const createTranslateLoader = (http: HttpClient) => {
         BrowserAnimationsModule,
         HttpClientModule,
         MultiSelectAllModule,
+        ExportAsModule,
         NgbModule.forRoot(),
         TranslateModule.forRoot({
             loader: {

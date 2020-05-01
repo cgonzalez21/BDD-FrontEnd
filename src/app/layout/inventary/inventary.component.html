@@ -8,8 +8,19 @@
         </p>
     </div>
 
+    <div class="row">
+        <div class="col-6">
+            <button type="submit" (click)="exportAs('pdf')"
+                class="btn rounded-btn">{{'Export to PDF format' | translate}}</button>
+        </div>
+        <div class="col-6">
+            <button type="submit" (click)="exportAs('xlsx')"
+                class="btn rounded-btn">{{'Export to Excel format' | translate}}</button>
+        </div>
+    </div>
+
     <div *ngIf="data" class="card-body table-responsive">
-        <table class="card-body table">
+        <table class="card-body table" id="mytable">
             <thead>
                 <tr>
                     <th>{{'Registry date' | translate}}</th>
@@ -21,11 +32,11 @@
             </thead>
             <tbody>
                 <tr *ngFor="let info of data" class="table-info">
-                    <th scope="row">{{info.FechaRegistro_in}}</th>
-                    <td>{{info.Nombre_al}}</td>
-                    <td>{{info.Descripcion_ar}}</td>
-                    <td>{{info.Disponible_in}}</td>
-                    <td>{{info.Precio_ar | currency}}</td>
+                    <th scope="row">{{info.FechaRegistro}}</th>
+                    <td>{{info.Nombre}}</td>
+                    <td>{{info.Descripcion}}</td>
+                    <td>{{info.Disponible}}</td>
+                    <td>{{info.Precio | currency}}</td>
                 </tr>
             </tbody>
         </table>

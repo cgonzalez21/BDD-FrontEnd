@@ -9,17 +9,15 @@
     </div>
 
     <form role="form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-
-        <div class="form-group has-success">
-            <label class="form-control-label" for="inputSuccess">{{'ID' | translate}}</label>
-            <input formControlName="cedula" type="text" class="form-control form-control-success" id="inputSuccess">
-        </div>
-        <div class="row">
-            <div class="form-group col-md-6">
+            <div class="form-group has-success">
+                <label class="form-control-label" for="inputSuccess">{{'ID' | translate}}</label>
+                <input formControlName="cedula" type="text" class="form-control form-control-success" id="inputSuccess">
+            </div>
+            <div class="form-group has-success">
                 <label>Seleccione el articulo a comprar</label>
                 <select formControlName="item" value="" type="text" class="form-control form-control-success"
                     class="form-control">
-                    <option [ngValue]="item" *ngFor="let item of data">{{item.Descripcion_ar}}</option>
+                    <option [ngValue]="item" *ngFor="let item of data">{{item.Descripcion}}</option>
                 </select>
             </div>
             <div class="form-group has-success">
@@ -27,8 +25,7 @@
                 <input formControlName="cantidad" type="text" class="form-control form-control-success"
                     id="inputSuccess">
             </div>
-        </div>
         <button type="submit" [disabled]="profileForm.status === 'INVALID'"
-            class="btn btn-primary">{{'Save' | translate}}</button>
+            class="btn rounded-btn">{{'Save' | translate}}</button>
     </form>
 </div>

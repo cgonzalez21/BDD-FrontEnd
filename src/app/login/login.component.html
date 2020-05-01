@@ -1,6 +1,6 @@
 <div class="login-page">
     <div class="row justify-content-md-center">
-        <div class="col-md-4">
+        <div class="col-md-6">
             <img src="assets/images/logo.png" width="150px" class="user-avatar" />
             <h1>Bienvenido</h1>
             <div>
@@ -14,7 +14,7 @@
                         <a class="btn rounded-btn" ngbDropdownToggle>{{selectItem}} </a>
                         <div ngbDropdownMenu>
                             <button class="dropdown-item" (click)="changeSortOrder(item)"
-                                *ngFor="let item of data">{{item.Nombre_su}}</button>
+                                *ngFor="let item of data">{{item.Nombre}}</button>
                         </div>
                     </div>
                 </div>

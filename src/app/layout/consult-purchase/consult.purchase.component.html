@@ -32,19 +32,17 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- <tr mdbTableCol *ngFor="let purchase of purchases | filter : 
-                ['Nombre_cl', 'Apellido_cl', 'Cedula_cl', 'Fecha_Registro']
-                : searchString; let i = index" class="table-info"> -->
-                <tr mdbTableCol *ngFor="let purchase of purchases | filter : searchString; let i = index" class="table-info">
+                <tr mdbTableCol *ngFor="let purchase of purchases | filter : searchString; let i = index"
+                    class="table-info">
                     <th scope="row">{{purchase.Fecha_Registro}}</th>
-                    <td>{{purchase.Nombre_cl}}</td>
-                    <td>{{purchase.Apellido_cl}}</td>
-                    <td>{{purchase.Cedula_cl}}</td>
-                    <td>{{purchase.Descripcion_ar}}</td>
-                    <td>{{purchase.Cantidad_vd}}</td>
-                    <td>{{purchase.SubTotal_ve | currency}}</td>
-                    <td>{{purchase.Impuesto_ve | currency}}</td>
-                    <td>{{purchase.Total_ve | currency}}</td>
+                    <td>{{purchase.Nombre}}</td>
+                    <td>{{purchase.Apellido}}</td>
+                    <td>{{purchase.Cedula}}</td>
+                    <td>{{purchase.Descripcion}}</td>
+                    <td>{{purchase.Cantidad}}</td>
+                    <td>{{purchase.SubTotal | currency}}</td>
+                    <td>{{purchase.Impuesto | currency}}</td>
+                    <td>{{purchase.Total | currency}}</td>
                 </tr>
             </tbody>
         </table>

@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
 })
 export class LoginComponent implements OnInit {
     data: string[];
-    selectItem: string = 'Seleccione la sucursal a conectar';
+    selectItem: string = 'Seleccione sucursal a conectar';
     sucID: string = '';
     alert: {};
     alertSuccess: boolean = false;
@@ -20,12 +20,12 @@ export class LoginComponent implements OnInit {
             type: '',
             message: '',
         };
-     }
+    }
 
     ngOnInit() {
         this.beservice.login().subscribe((res) => {
 
-            if(res.code == 500) {
+            if (res.code == 500) {
                 this.alert = {
                     id: 1,
                     type: 'danger',
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
                 this.router.navigate["/"];
             }
 
-            if(res.code == 401){
+            if (res.code == 401) {
                 this.alert = {
                     id: 1,
                     type: 'danger',
@@ -45,11 +45,11 @@ export class LoginComponent implements OnInit {
                 this.router.navigate["/"];
             }
 
-            if(res.code == 200) {
+            if (res.code == 200) {
                 this.data = res.data;
             }
-            
-            if(res.code == 300){
+
+            if (res.code == 300) {
                 this.alert = {
                     id: 1,
                     type: 'warning',
@@ -58,7 +58,16 @@ export class LoginComponent implements OnInit {
                 this.alertSuccess = true;
                 this.router.navigate["/"];
             }
-            
+
+            if (res.code != 500 && res.code != 401 && res.code != 200 && res.code != 300) {
+                this.alert = {
+                    id: 1,
+                    type: 'danger',
+                    message: 'Lo sentimos, el servicio esta temporalmente suspendido. Intente mas tarde.',
+                };
+                this.alertSuccess = true;
+                this.router.navigate["/"];
+            }
         });
     }
 
@@ -71,8 +80,8 @@ export class LoginComponent implements OnInit {
     }
 
     changeSortOrder(item: any) {
-        this.sucID = item.ID_su
-        this.selectItem = item.Nombre_su
+        this.sucID = item.ID
+        this.selectItem = item.Nombre
     }
 
     close() {

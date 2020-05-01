@@ -57,5 +57,7 @@
     "Tax": "Impuesto",
     "Total": "Total",
     "Enter client information": "Introduzca información de cliente",
-    "Enter client ID": "Introduzca la cedula del cliente"
+    "Enter client ID": "Introduzca la cedula del cliente",
+    "Export to PDF format": "Exportar en formato PDF",
+    "Export to Excel format": "Exportar en formato Excel"
 }

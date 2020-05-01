@@ -13,10 +13,10 @@ export class FilterPipe implements PipeTransform {
         }
         return items.filter(it => {
             const Fecha_Registro = it.Fecha_Registro.toString().includes(searchString)
-            const Nombre_cl = it.Nombre_cl.toLowerCase().includes(searchString.toLowerCase())
-            const Apellido_cl = it.Apellido_cl.toLowerCase().includes(searchString.toLowerCase())
-            const Cedula_cl = it.Cedula_cl.toLowerCase().includes(searchString.toLowerCase())
-            return (Fecha_Registro + Nombre_cl + Apellido_cl + Cedula_cl);
+            const Nombre = it.Nombre.toLowerCase().includes(searchString.toLowerCase())
+            const Apellido = it.Apellido.toLowerCase().includes(searchString.toLowerCase())
+            const Cedula = it.Cedula.toLowerCase().includes(searchString.toLowerCase())
+            return (Fecha_Registro + Nombre + Apellido + Cedula);
         })
     }
 }

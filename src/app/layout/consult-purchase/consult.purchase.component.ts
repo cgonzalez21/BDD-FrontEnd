@@ -16,7 +16,7 @@ interface Purchase {
     impuesto: string;
     total: string;
     fecha: Date;
-  }
+}
 
 
 @Component({
@@ -35,7 +35,7 @@ export class ConsultPurchaseComponent implements OnInit {
     alertSuccess: boolean = false;
     tableVisible: boolean = false;
     sucID: string;
-    purchases: Purchase [];
+    purchases: Purchase[];
     filter = new FormControl('');
     public searchString: string;
 
@@ -48,7 +48,7 @@ export class ConsultPurchaseComponent implements OnInit {
         };
     }
 
-    ngOnInit() { this.sucID = localStorage.getItem('sucID'); this.getPurchases() }
+    ngOnInit() { this.sucID = localStorage.getItem('sucID'); this.getPurchases(); }
 
     getPurchases() {
         this.beservice.getPurchases(this.sucID).subscribe((res) => {

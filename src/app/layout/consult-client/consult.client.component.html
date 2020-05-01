@@ -12,10 +12,11 @@
 
         <div class="form-group has-success">
             <label class="form-control-label" for="inputSuccess">{{'ID' | translate}}</label>
-            <input (ngModelChange)="onInputChange()" formControlName="cedula" type="text" class="form-control form-control-success" id="inputSuccess">
+            <input (ngModelChange)="onInputChange()" formControlName="cedula" type="text"
+                class="form-control form-control-success" id="inputSuccess">
         </div>
         <button type="submit" [disabled]="profileForm.status === 'INVALID'"
-            class="btn btn-primary">{{'Consult' | translate}}</button>
+            class="btn rounded-btn">{{'Consult' | translate}}</button>
     </form>
 
     <div *ngIf="tableVisible" class="card-body table-responsive">
@@ -33,11 +34,11 @@
             <tbody>
                 <tr *ngFor="let info of data" class="table-info">
                     <th scope="row">{{info.FechaRegistro_cl}}</th>
-                    <td>{{info.Nombre_cl}}</td>
-                    <td>{{info.Apellido_cl}}</td>
-                    <td>{{info.Telefono_cl}}</td>
-                    <td>{{info.Correo_cl}}</td>
-                    <td>{{info.Cedula_cl}}</td>
+                    <td>{{info.Nombre}}</td>
+                    <td>{{info.Apellido}}</td>
+                    <td>{{info.Telefono}}</td>
+                    <td>{{info.Correo}}</td>
+                    <td>{{info.Cedula}}</td>
                 </tr>
             </tbody>
         </table>
