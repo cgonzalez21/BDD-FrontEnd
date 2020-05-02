@@ -64,7 +64,7 @@ export class NewPurchaseComponent implements OnInit {
             cantidad: form.cantidad,
             id_suc: this.sucID
         };
-        if (form.item.Disponible_in > 0) {
+        if (form.item.Disponible > 0) {
             this.beservice.savePurchase(body).subscribe((res) => {
                 if (res.code == 200) {
                     this.alert = {
