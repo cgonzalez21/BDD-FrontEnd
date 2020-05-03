@@ -24,7 +24,6 @@
             <thead>
                 <tr>
                     <th>{{'Registry date' | translate}}</th>
-                    <th>{{'Name' | translate }}</th>
                     <th>{{'Description' | translate }}</th>
                     <th>{{'Available' | translate }}</th>
                     <th>{{'Price' | translate }}</th>
@@ -33,7 +32,6 @@
             <tbody>
                 <tr *ngFor="let info of data" class="table-info">
                     <th scope="row">{{info.FechaRegistro}}</th>
-                    <td>{{info.Nombre}}</td>
                     <td>{{info.Descripcion}}</td>
                     <td>{{info.Disponible}}</td>
                     <td>{{info.Precio | currency}}</td>

@@ -60,10 +60,11 @@ export class NewPurchaseComponent implements OnInit {
         const form = this.profileForm.value;
         const body = {
             cedula: form.cedula,
-            id_art: form.item.ArticuloID_in,
+            id_art: form.item.ID,
             cantidad: form.cantidad,
             id_suc: this.sucID
         };
+
         if (form.item.Disponible > 0) {
             this.beservice.savePurchase(body).subscribe((res) => {
                 if (res.code == 200) {
