@@ -43,7 +43,7 @@
         "rxjs": "6.2.1",
         "yarn": "1.6.0",
         "zone.js": "0.8.29",
-        "jquery": "1.9.1"
+        "jquery": "3.5.0"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "0.6.1",
